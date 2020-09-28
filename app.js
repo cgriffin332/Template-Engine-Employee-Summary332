@@ -13,7 +13,102 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-
+const internQuestions = [
+  {
+    type: "input",
+    message: "What is your intern's name?",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "What is your intern's id?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is your intern's email?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is your intern's school?",
+    name: "school",
+  },
+  {
+    type: "list",
+    message: "Which team member would you like to add?",
+    name: "employee",
+    choices: [
+      "Intern",
+      "Engineer",
+      "I don't want to add any more team members.",
+    ],
+  },
+];
+const engineerQuestions = [
+  {
+    type: "input",
+    message: "What is your engineer's name?",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "What is your engineer's id?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is your engineer's email?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is your engineer's GitHub username?",
+    name: "github",
+  },
+  {
+    type: "list",
+    message: "Which team member would you like to add?",
+    name: "employee",
+    choices: [
+      "Intern",
+      "Engineer",
+      "I don't want to add any more team members.",
+    ],
+  },
+];
+const managerQuestions = [
+  {
+    type: "input",
+    message: "What is your manager's name?",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "What is your manager's id?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is your manager's email?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is your manager's office number?",
+    name: "officeNumber",
+  },
+  {
+    type: "list",
+    message: "Which team member would you like to add?",
+    name: "employee",
+    choices: [
+      "Intern",
+      "Engineer",
+      "I don't want to add any more team members.",
+    ],
+  },
+];
 
 inquirer
   .prompt(Manager.managerQuestions)
