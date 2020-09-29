@@ -1,6 +1,6 @@
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const M = require("./lib/Manager");
+const E = require("./lib/Engineer");
+const I = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -12,103 +12,103 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-const internQuestions = [
-  {
-    type: "input",
-    message: "What is your intern's name?",
-    name: "name",
-  },
-  {
-    type: "input",
-    message: "What is your intern's id?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is your intern's email?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is your intern's school?",
-    name: "school",
-  },
-  {
-    type: "list",
-    message: "Which team member would you like to add?",
-    name: "employee",
-    choices: [
-      "Intern",
-      "Engineer",
-      "I don't want to add any more team members.",
-    ],
-  },
-];
-const engineerQuestions = [
-  {
-    type: "input",
-    message: "What is your engineer's name?",
-    name: "name",
-  },
-  {
-    type: "input",
-    message: "What is your engineer's id?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is your engineer's email?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is your engineer's GitHub username?",
-    name: "github",
-  },
-  {
-    type: "list",
-    message: "Which team member would you like to add?",
-    name: "employee",
-    choices: [
-      "Intern",
-      "Engineer",
-      "I don't want to add any more team members.",
-    ],
-  },
-];
-const managerQuestions = [
-  {
-    type: "input",
-    message: "What is your manager's name?",
-    name: "name",
-  },
-  {
-    type: "input",
-    message: "What is your manager's id?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is your manager's email?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is your manager's office number?",
-    name: "officeNumber",
-  },
-  {
-    type: "list",
-    message: "Which team member would you like to add?",
-    name: "employee",
-    choices: ["Intern", "Engineer"],
-  },
-];
+// const internQuestions = [
+//   {
+//     type: "input",
+//     message: "What is your intern's name?",
+//     name: "name",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your intern's id?",
+//     name: "id",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your intern's email?",
+//     name: "email",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your intern's school?",
+//     name: "school",
+//   },
+//   {
+//     type: "list",
+//     message: "Which team member would you like to add?",
+//     name: "employee",
+//     choices: [
+//       "Intern",
+//       "Engineer",
+//       "I don't want to add any more team members.",
+//     ],
+//   },
+// ];
+// const engineerQuestions = [
+//   {
+//     type: "input",
+//     message: "What is your engineer's name?",
+//     name: "name",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your engineer's id?",
+//     name: "id",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your engineer's email?",
+//     name: "email",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your engineer's GitHub username?",
+//     name: "github",
+//   },
+//   {
+//     type: "list",
+//     message: "Which team member would you like to add?",
+//     name: "employee",
+//     choices: [
+//       "Intern",
+//       "Engineer",
+//       "I don't want to add any more team members.",
+//     ],
+//   },
+// ];
+// const managerQuestions = [
+//   {
+//     type: "input",
+//     message: "What is your manager's name?",
+//     name: "name",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your manager's id?",
+//     name: "id",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your manager's email?",
+//     name: "email",
+//   },
+//   {
+//     type: "input",
+//     message: "What is your manager's office number?",
+//     name: "officeNumber",
+//   },
+//   {
+//     type: "list",
+//     message: "Which team member would you like to add?",
+//     name: "employee",
+//     choices: ["Intern", "Engineer"],
+//   },
+// ];
 const employees = [];
 inquirer
-  .prompt(managerQuestions)
+  .prompt(M.managerQuestions)
   .then(function (response) {
-    const manager = new Manager(
+    const manager = new M.Manager(
       response.name,
       response.id,
       response.email,
@@ -127,9 +127,9 @@ inquirer
 
 const askIntern = function () {
   inquirer
-    .prompt(internQuestions)
+    .prompt(I.internQuestions)
     .then(function (response) {
-      const intern = new Intern(
+      const intern = new I.Intern(
         response.name,
         response.id,
         response.email,
@@ -152,9 +152,9 @@ const askIntern = function () {
 
 const askEngineer = function () {
   inquirer
-    .prompt(engineerQuestions)
+    .prompt(E.engineerQuestions)
     .then(function (response) {
-      const engineer = new Engineer(
+      const engineer = new E.Engineer(
         response.name,
         response.id,
         response.email,
@@ -188,17 +188,3 @@ const makeTeamHtml = function () {
     console.log("Success!");
   });
 };
-
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
