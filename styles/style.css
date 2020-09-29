@@ -12,3 +12,6 @@ body {
 .card-body, .list-group-item {
     background-color: #c4a35a;
 }
+.card {
+    width: 300px;
+}

@@ -1,8 +1,11 @@
 //IMPORTS
 
-const M = require("./lib/Manager");
-const E = require("./lib/Engineer");
-const I = require("./lib/Intern");
+const Manager = require("./lib/Manager").Manager;
+const Engineer = require("./lib/Engineer").Engineer;
+const Intern = require("./lib/Intern").Intern;
+const managerQuestions = require("./lib/Manager").managerQuestions;
+const engineerQuestions = require("./lib/Engineer").engineerQuestions;
+const internQuestions = require("./lib/Intern").internQuestions;
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -16,9 +19,9 @@ const employees = [];
 
 //function to build teams
 inquirer
-  .prompt(M.managerQuestions)
+  .prompt(managerQuestions)
   .then(function (response) {
-    const manager = new M.Manager(
+    const manager = new Manager(
       response.name,
       response.id,
       response.email,
@@ -40,9 +43,9 @@ inquirer
 //function to ask intern questions
 const askIntern = () => {
   inquirer
-    .prompt(I.internQuestions)
+    .prompt(internQuestions)
     .then(function (response) {
-      const intern = new I.Intern(
+      const intern = new Intern(
         response.name,
         response.id,
         response.email,
@@ -65,9 +68,9 @@ const askIntern = () => {
 //function to ask engineer questions
 const askEngineer = () => {
   inquirer
-    .prompt(E.engineerQuestions)
+    .prompt(engineerQuestions)
     .then(function (response) {
-      const engineer = new E.Engineer(
+      const engineer = new Engineer(
         response.name,
         response.id,
         response.email,
