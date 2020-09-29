@@ -1,11 +1,11 @@
 //IMPORTS
 
-const Manager = require("./lib/Manager").Manager;
-const Engineer = require("./lib/Engineer").Engineer;
-const Intern = require("./lib/Intern").Intern;
-const managerQuestions = require("./lib/Manager").managerQuestions;
-const engineerQuestions = require("./lib/Engineer").engineerQuestions;
-const internQuestions = require("./lib/Intern").internQuestions;
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const managerQuestions = require("./lib/Questions").managerQuestions;
+const engineerQuestions = require("./lib/Questions").engineerQuestions;
+const internQuestions = require("./lib/Questions").internQuestions;
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
