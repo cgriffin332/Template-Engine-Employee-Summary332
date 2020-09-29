@@ -142,6 +142,7 @@ const askIntern = function () {
         askEngineer();
       } else {
         console.log(employees);
+        makeTeamHtml();
       }
     })
     .catch((err) => {
@@ -166,6 +167,7 @@ const askEngineer = function () {
         askEngineer();
       } else {
         console.log(employees);
+        makeTeamHtml();
       }
     })
     .catch((err) => {
@@ -178,6 +180,15 @@ const askEngineer = function () {
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
+const makeTeamHtml = function () {
+  fs.writeFile(outputPath, render(employees), function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("Success!");
+  });
+};
+
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
