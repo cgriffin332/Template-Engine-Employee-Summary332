@@ -57,7 +57,6 @@ const askIntern = () => {
       } else if (response.employee === "Engineer") {
         askEngineer();
       } else {
-        console.log(employees);
         makeTeamHtml();
       }
     })
@@ -82,7 +81,6 @@ const askEngineer = () => {
       } else if (response.employee === "Engineer") {
         askEngineer();
       } else {
-        console.log(employees);
         makeTeamHtml();
       }
     })
