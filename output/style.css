@@ -1,0 +1,14 @@
+.jumbotron {
+    background-color: #c66b3d;
+    color: white;
+}
+body {
+    background-color: #e5e5dc;
+}
+.card-header {
+    background-color: #26495c;
+    color: white;
+}
+.card-body, .list-group-item {
+    background-color: #c4a35a;
+}
