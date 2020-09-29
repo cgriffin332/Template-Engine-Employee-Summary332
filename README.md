@@ -3,7 +3,7 @@
 
 ## Description
 
-In this project I have created a command line application used to build a programming team based on user input that will then create an html file including the team roster. This application was built through test oriented programming using the npm package, jest. The user is prompted to answer a number of questions based on the type of employee being created, and does this with the npm package, inquirer. 
+In this project I have created a command line application used to build a programming team. The app will take in user input and use it to create an html file of the team roster. This application was built through test driven development using the npm package, jest. The user is prompted to answer a number of questions based on the type of employee being created, and does this with the npm package, inquirer. 
 
 ## Table of Contents
 
@@ -16,14 +16,17 @@ In this project I have created a command line application used to build a progra
 
 ## Installation
 
-The user will need to clone the necesarry files from this project's GitHub repo, then run npm install in the terminal. Once that is finished, all that is left is to run the code "node app.js".
+The user will need to clone the necessary files from this project's GitHub repo, then run npm install in the terminal. Once that is finished, run the code "node app.js" to start the application.
 
 ## Usage
 
+Click link to watch a video demo:<br />
+https://drive.google.com/file/d/120a4DMx13qylhklTS8PS-SgbPe93G-7W/view
+<br />
 Once the user has started the application by running "node app.js", they will be prompted to answer questions in the terminal. 
 ![Image of Start](./images/1.png)
 
-Certain validations are set in place to insure that the users answers are acceptable. 
+Certain validations are set in place to insure that the user’s answers are acceptable. 
 ![Image of Validate](./images/2.png)
 
 Once the user finishes answering the manager questions, they are able to pick the next type of employee they would like to add to their team. 
@@ -49,7 +52,7 @@ If you would like to contribute, please contact me via email or GitHub.
 
 ## Tests
 
-All of the projects tests are found in the test folder. If you would like to run these tests, simply run the command "npm run test".
+All of the project's tests are found in the test folder. If you would like to run these tests, simply run the command "npm run test".
 
 ## Questions
 
