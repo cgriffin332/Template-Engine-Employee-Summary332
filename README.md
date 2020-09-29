@@ -20,7 +20,20 @@ The user will need to clone the necesarry files from this project's GitHub repo,
 
 ## Usage
 
-Once the user has started the application by running "Node app.js", they will be prompted to answer questions in the terminal. Certain validations are set in place to insure that the users answers are acceptable. Once the user finishes answering the manager questions, they are ablt to pick the next type of employee they would like to add to their team. This process continues until the user decides that they no longer wish to agg more employees. An html file is then dynamically generated including each member of your new team.
+Once the user has started the application by running "node app.js", they will be prompted to answer questions in the terminal. 
+![Image of Start](./images/1.png)
+
+Certain validations are set in place to insure that the users answers are acceptable. 
+![Image of Validate](./images/2.png)
+
+Once the user finishes answering the manager questions, they are able to pick the next type of employee they would like to add to their team. 
+![Image of Next](./images/3.png)
+
+This process continues until the user decides that they no longer wish to add more employees. 
+![Image of Done](./images/4.png)
+
+An html file is then dynamically generated including each member of your new team.
+![Image of HTML](./images/5.png)
 
 ## License
 
